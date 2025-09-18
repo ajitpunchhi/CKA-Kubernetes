@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basic-web-app
+  labels:
+    app: webserver
+    env: production
+    version: v1.0
+spec:
+  containers:
+  - name: webserver
+    image: ajitpunchhi/dynamicweb:v3
+    ports:
+    - containerPort: 80
+      name: http
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
